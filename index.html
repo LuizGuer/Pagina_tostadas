@@ -21,52 +21,54 @@
 <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
-        <nav class="nav container">
-            <a href="/" class="nav__logo">
-                <img src="/assets/img/logo.png" alt="Xōchitōn Logo" style="height: 40px;">
-            </a>
-
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="/" class="nav__link">Inicio</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="/pages/productos.html" class="nav__link">Productos</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="/pages/beneficios.html" class="nav__link">Beneficios</a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="/#contact" class="nav__link">Contacto</a>
-                    </li>
-                </ul>
-
-                <!-- Close button -->
-                <div class="nav__close" id="nav-close">
-                    <i class="ri-close-line"></i>
-                </div>
-            </div>
-
-            <div class="nav__actions">
-                <!-- Search button -->
-                <i class="ri-search-line nav__search" id="search-btn"></i>
-
-                <!-- Cart button -->
-                <a href="/pages/carrito.html" class="nav__link cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="/assets/img/logo.png" alt="Xōchitōn Logo" height="40">
                 </a>
 
-                <!-- Login button -->
-                <i class="ri-user-line nav__login" id="login-btn"></i>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="/" class="nav__link">Inicio</a>
+                        </li>
 
-                <!-- Toggle button -->
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="ri-menu-line"></i>
+                        <li class="nav__item">
+                            <a href="/pages/productos.html" class="nav__link">Productos</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="/pages/beneficios.html" class="nav__link">Beneficios</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="/#contact" class="nav__link">Contacto</a>
+                        </li>
+                    </ul>
+
+                    <!-- Close button -->
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+
+                <div class="nav__actions">
+                    <!-- Search button -->
+                    <i class="ri-search-line nav__search" id="search-btn"></i>
+
+                    <!-- Cart button -->
+                    <a href="/pages/carrito.html" class="nav__link cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+
+                    <!-- Login button -->
+                    <i class="ri-user-line nav__login" id="login-btn"></i>
+
+                    <!-- Toggle button -->
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line"></i>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -123,10 +125,15 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero__content">
-                <h1 class="hero__title">Xōchitōn</h1>
-                <p class="hero__subtitle">Descubre el sabor y los beneficios de los insectos comestibles</p>
-                <a href="/pages/productos.html" class="btn btn-primary">Ver Productos</a>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero__title">Descubre el sabor y los beneficios de los insectos comestibles</h1>
+                    <p class="hero__subtitle">Productos tradicionales de Oaxaca con el mejor sabor y calidad</p>
+                    <a href="/pages/productos.html" class="btn btn-primary">Ver Productos</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/img/entomofagia.jpg" alt="Insectos comestibles tradicionales" class="img-fluid rounded">
+                </div>
             </div>
         </div>
     </section>
@@ -134,56 +141,54 @@
     <!-- About Section -->
     <section class="about">
         <div class="container">
-            <div class="about__content">
-                <div class="about__text">
-                    <h2 class="about__title">Nuestra Historia</h2>
-                    <p class="about__description">
-                        En Xōchitōn, rescatamos la tradición prehispánica de consumir insectos comestibles, 
-                        ofreciendo productos de la más alta calidad que combinan el sabor auténtico con los 
-                        beneficios nutricionales de estos superalimentos.
-                    </p>
-                    <a href="/pages/beneficios.html" class="btn btn-outline">Conoce más</a>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="/assets/img/chapulines_oaxaca.jpg" alt="Chapulines de Oaxaca" class="img-fluid rounded">
                 </div>
-                <div class="about__image">
-                    <img src="/assets/img/about-bg.jpg" alt="Nuestra Historia">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Nuestra Historia</h2>
+                    <p>En Xōchitōn, preservamos la tradición milenaria de la entomofagia en México, ofreciendo productos de la más alta calidad y autenticidad.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Featured Products Section -->
-    <section class="featured-products">
+    <section class="products">
         <div class="container">
-            <h2 class="section-title">Productos Destacados</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="/assets/img/products/chapulines-tostados.jpg" alt="Chapulines Tostados">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Chapulines Tostados</h3>
-                        <p class="product-card__price">$120.00</p>
-                        <a href="/pages/productos.html" class="btn btn-primary">Ver Detalles</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="/assets/img/products/tostadas-chapulin.jpg" alt="Tostadas de Maíz con Chapulín">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Tostadas de Maíz con Chapulín</h3>
-                        <p class="product-card__price">$85.00</p>
-                        <a href="/pages/productos.html" class="btn btn-primary">Ver Detalles</a>
+            <h2 class="section-title text-center">Productos Destacados</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="/assets/img/chapulin.jpg" class="card-img-top" alt="Chapulines Tostados">
+                        <div class="card-body">
+                            <h5 class="card-title">Chapulines Tostados</h5>
+                            <p class="card-text">Chapulines tradicionales de Oaxaca</p>
+                            <p class="price">$120.00 MXN</p>
+                            <a href="/pages/productos.html" class="btn btn-primary">Ver Detalles</a>
+                        </div>
                     </div>
                 </div>
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <img src="/assets/img/products/gusanos-maguey.jpg" alt="Gusanos de Maguey">
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="/assets/img/Tostada.png" class="card-img-top" alt="Tostadas de Maíz con Chapulín">
+                        <div class="card-body">
+                            <h5 class="card-title">Tostadas de Maíz con Chapulín</h5>
+                            <p class="card-text">Tostadas artesanales con chapulines</p>
+                            <p class="price">$85.00 MXN</p>
+                            <a href="/pages/productos.html" class="btn btn-primary">Ver Detalles</a>
+                        </div>
                     </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Gusanos de Maguey</h3>
-                        <p class="product-card__price">$350.00</p>
-                        <a href="/pages/productos.html" class="btn btn-primary">Ver Detalles</a>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="/assets/img/istockphoto-1090755844-612x612.jpg" class="card-img-top" alt="Gusanos de Maguey">
+                        <div class="card-body">
+                            <h5 class="card-title">Gusanos de Maguey</h5>
+                            <p class="card-text">Gusanos de maguey tradicionales</p>
+                            <p class="price">$350.00 MXN</p>
+                            <a href="/pages/productos.html" class="btn btn-primary">Ver Detalles</a>
+                        </div>
                     </div>
                 </div>
             </div>

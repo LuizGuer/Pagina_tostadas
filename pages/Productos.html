@@ -116,13 +116,10 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="products-hero">
+    <section class="hero">
         <div class="container">
-            <h1 class="products-hero__title">Nuestros Productos</h1>
-            <p class="products-hero__subtitle">
-                Descubre nuestra selección de deliciosos insectos comestibles, 
-                una tradición prehispánica llena de sabor y nutrientes.
-            </p>
+            <h1 class="hero__title">Nuestros Productos</h1>
+            <p class="hero__subtitle">Descubre nuestra selección de insectos comestibles tradicionales</p>
         </div>
     </section>
 
@@ -145,10 +142,42 @@
     </section>
 
     <!-- Products Grid -->
-    <section class="products-grid">
+    <section class="products">
         <div class="container">
-            <div class="products-grid__content" id="productGrid">
-                <!-- Los productos se cargarán dinámicamente -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="/assets/img/chapulin.jpg" class="card-img-top" alt="Chapulines Tostados">
+                        <div class="card-body">
+                            <h5 class="card-title">Chapulines Tostados</h5>
+                            <p class="card-text">Chapulines tradicionales de Oaxaca</p>
+                            <p class="price">$120.00 MXN</p>
+                            <button class="btn btn-primary add-to-cart" data-id="1">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="/assets/img/Tostada.png" class="card-img-top" alt="Tostadas de Maíz con Chapulín">
+                        <div class="card-body">
+                            <h5 class="card-title">Tostadas de Maíz con Chapulín</h5>
+                            <p class="card-text">Tostadas artesanales con chapulines</p>
+                            <p class="price">$85.00 MXN</p>
+                            <button class="btn btn-primary add-to-cart" data-id="2">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="/assets/img/istockphoto-1090755844-612x612.jpg" class="card-img-top" alt="Gusanos de Maguey">
+                        <div class="card-body">
+                            <h5 class="card-title">Gusanos de Maguey</h5>
+                            <p class="card-text">Gusanos de maguey tradicionales</p>
+                            <p class="price">$350.00 MXN</p>
+                            <button class="btn btn-primary add-to-cart" data-id="4">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
