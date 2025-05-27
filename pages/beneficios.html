@@ -1,134 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beneficios</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Beneficios - Xōchitōn</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg nav-link bg-customNav fixed_top sticky-top">
-        <div class="container">
-            <a href="../index.html" class="navbar-brand text-white"><img class="logo_chapulin" src="../img/logo.png"
-                    alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
-                aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarS">
-                <ul class="navbar-nav ms-auto mb-2 mb.lg-0">
-                    <!-- <li class="nav-item">
-                        <a href="#" class="nav-link">Inicio</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a href="/index.html" class="nav-link">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="porque_comer_insectos.html" class="nav-link">¿Por qué comer insectos?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="beneficios.html" class="nav-link">Beneficios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="Productos.html" class="nav-link">Productos</a>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="/" class="nav__logo">
+                <img src="/assets/img/logo.png" alt="Xōchitōn Logo" style="height: 40px;">
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/" class="nav__link">Inicio</a>
                     </li>
 
+                    <li class="nav__item">
+                        <a href="/pages/productos.html" class="nav__link">Productos</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="/pages/beneficios.html" class="nav__link active">Beneficios</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="/#contact" class="nav__link">Contacto</a>
+                    </li>
                 </ul>
+
+                <!-- Close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
             </div>
-        </div>
-    </nav>
 
+            <div class="nav__actions">
+                <!-- Search button -->
+                <i class="ri-search-line nav__search" id="search-btn"></i>
 
-    <!-- seccion de llamada a articulos -->
-    <section id="Articulos" class="articulos section-padding">
+                <!-- Cart button -->
+                <a href="/pages/carrito.html" class="nav__link cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+
+                <!-- Login button -->
+                <i class="ri-user-line nav__login" id="login-btn"></i>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== SEARCH ====================-->
+    <div class="search" id="search">
+        <form action="" class="search__form">
+            <i class="ri-search-line search__icon"></i>
+            <input type="search" placeholder="Buscar productos..." class="search__input">
+        </form>
+
+        <i class="ri-close-line search__close" id="search-close"></i>
+    </div>
+
+    <!--==================== LOGIN ====================-->
+    <div class="login" id="login">
+        <form action="" class="login__form">
+            <h2 class="login__title">Iniciar Sesión</h2>
+            
+            <div class="login__group">
+                <div>
+                    <label for="email" class="login__label">Correo Electrónico</label>
+                    <input type="email" placeholder="Escribe tu correo electrónico" id="email" class="login__input">
+                </div>
+                
+                <div>
+                    <label for="password" class="login__label">Contraseña</label>
+                    <input type="password" placeholder="Ingresa tu contraseña" id="password" class="login__input">
+                </div>
+            </div>
+
+            <div>
+                <p class="login__signup">
+                    ¿No tienes cuenta? <a href="#">Regístrate</a>
+                </p>
+
+                <a href="#" class="login__forgot">
+                    Olvidaste tu contraseña
+                </a>
+
+                <button type="submit" class="login__button">Iniciar Sesión</button>
+            </div>
+        </form>
+
+        <i class="ri-close-line login__close" id="login-close"></i>
+    </div>
+
+    <!-- Benefits Hero Section -->
+    <section class="benefits-hero">
         <div class="container">
+            <h1 class="benefits-hero__title">Beneficios de los Insectos Comestibles</h1>
+            <p class="benefits-hero__subtitle">Descubre por qué los insectos son el alimento del futuro</p>
+        </div>
+    </section>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="articulo-text text-dark pb-5">
-                        <h2 class="text-center">Beneficios del Consumo de Insectos</h2>
-                        <p>
-                            Consumir insectos no es una moda pasajera, es una respuesta inteligente a múltiples desafíos
-                            globales. Son ricos en proteínas, minerales y vitaminas esenciales. <b>La nutrición basada
-                                en
-                                insectos</b> ha captado la atención de nutricionistas, chefs y consumidores en todo el
-                            mundo.
-                            Son una excelente opción dentro de los <b>alimentos alternativos para el futuro</b>, y están
-                            siendo
-                            promovidos como una fuente eficiente y sostenible de proteína. <br>
-                            <br>
-                        </p>
-
-                        <div class="insectos_info">
-                            <img src="../img/inscetos_infor.jpg" alt="">
-                            <p class="text-center">Gráfico de lo que representa el consumo de 10 kilogramos de hierba y
-                                su incremento en
-                                cantidad de kilos cuando son insectos. <br>
-                                Foto: Belatchew Labs InsectCity
-                            </p>
-                            <br>
-                        </div>
-
-                        <h2 class="text-center">Beneficios de Comer Chapulines</h2>
-                        <p>
-                            Los chapulines, en particular, son ricos en proteínas de alto valor biológico, calcio,
-                            hierro, magnesio y potasio. Este perfil nutricional los convierte en un superalimento ideal
-                            para quienes buscan <b>comida con alto nivel de proteína</b>. Además, contienen grasas
-                            saludables y
-                            fibra, lo que los hace perfectos para una <b>dieta equilibrada y funcional</b>. Si buscas
-                            <b>snacks
-                                saludables</b>, los chapulines son una opción ideal para incorporar en tu rutina diaria
-                            sin
-                            sacrificar sabor ni calidad. <br>
-                        </p>
-
-                        <div class="chapulin_info">
-                            <img src="../img/informacion_chapulin.jpg" alt="">
-                            <p class="text-center">
-                                Gráfico que muestra la comparación entre los componentes de 100
-                                gramos de carne de vacuno y la misma cantidad en insectos. <br>
-                                Foto: Belatchew Labs InsectCity
-                            </p>
-                            <br>
-                        </div>
-
-                        <h2 class="text-center">Sostenibilidad y Futuro: Alimentos Sustentables</h2>
-                        <p>
-                            La producción de insectos tiene una huella ecológica baja, lo que los convierte en
-                            <b>alimentos
-                                sustentables</b> ideales para combatir el cambio climático y reducir el consumo de
-                            recursos
-                            naturales. Su crianza requiere menos agua, tierra y genera menos gases de efecto
-                            invernadero. Así, los chapulines se consolidan como un verdadero <b>alimento alternativo
-                                para
-                                el futuro</b>. <br>
-                            <br>
-                        </p>
+    <!-- Benefits Content -->
+    <section class="benefits-content">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <i class="fas fa-heart"></i>
                     </div>
+                    <h3 class="benefit-card__title">Alto Valor Nutricional</h3>
+                    <p class="benefit-card__text">Los insectos son ricos en proteínas, vitaminas y minerales esenciales para una dieta saludable.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="benefit-card__title">Sostenibilidad</h3>
+                    <p class="benefit-card__text">La cría de insectos requiere menos recursos y produce menos emisiones que la ganadería tradicional.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="benefit-card__title">Tradición Cultural</h3>
+                    <p class="benefit-card__text">Los insectos han sido parte fundamental de la dieta mexicana desde tiempos prehispánicos.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="benefit-card__title">Eficiencia Alimentaria</h3>
+                    <p class="benefit-card__text">Los insectos convierten el alimento en proteína de manera más eficiente que otros animales.</p>
                 </div>
             </div>
         </div>
-
     </section>
 
-    <footer class="bg-dark p-2 text-center">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <h2>Contacto</h2>
-            <p class="text-center text-white">
-                Tostadas chapulin
-            </p>
-            <p class="text-center text-white">All rights reserved - 2025 @ Made by LAGH</p>
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">Xōchitōn</h3>
+                    <p class="footer__text">Deliciosos insectos comestibles para una alimentación sostenible y nutritiva.</p>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Enlaces Rápidos</h3>
+                    <ul class="footer__links">
+                        <li class="footer__link"><a href="/">Inicio</a></li>
+                        <li class="footer__link"><a href="/pages/productos.html">Productos</a></li>
+                        <li class="footer__link"><a href="/pages/beneficios.html">Beneficios</a></li>
+                        <li class="footer__link"><a href="/#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Síguenos</h3>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 Xōchitōn. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 
 </html>

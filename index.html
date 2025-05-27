@@ -1,136 +1,307 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./pages/style.css">
+    <title>Xōchitōn - Insectos Comestibles</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="/" class="nav__logo">
+                <img src="/assets/img/logo.png" alt="Xōchitōn Logo" style="height: 40px;">
+            </a>
 
-    <nav class="navbar navbar-expand-lg nav-link bg-customNav fixed_top sticky-top">
-        <div class="container">
-            <!-- <a href="index.html" class="navbar-brand text-white">Inicio</a> -->
-            <a href="../index.html" class="navbar-brand text-white"><img class="logo_chapulin" src="../img/logo.png"
-                    alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
-                aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarS">
-                <ul class="navbar-nav ms-auto mb-2 mb.lg-0">
-                    <!-- <li class="nav-item">
-                        <a href="#" class="nav-link">Inicio</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Inicio</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/" class="nav__link">Inicio</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="./pages/porque_comer_insectos.html" class="nav-link">¿Por qué comer insectos?</a>
+
+                    <li class="nav__item">
+                        <a href="/pages/productos.html" class="nav__link">Productos</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="./pages/beneficios.html" class="nav-link">Beneficios</a>
+
+                    <li class="nav__item">
+                        <a href="/pages/beneficios.html" class="nav__link">Beneficios</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="./pages/Productos.html" class="nav-link">Productos</a>
+
+                    <li class="nav__item">
+                        <a href="/#contact" class="nav__link">Contacto</a>
                     </li>
                 </ul>
-            </div>
-        </div>
-    </nav>
 
-
-    <div id="carouselE" class="carousel slide carrusel" data-bs-ride="carousel">
-
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselE" data-bs-slide-to="0" class="active" aria-current="true"
-                aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselE" data-bs-slide-to="1" aria-current="true"
-                aria-label="Slide 2"></button>
-        </div>
-
-        <div class="carousel-inner">
-            <div class="imagen1 carousel-item active">
-                <img class="d-block w-100" src="./img/banner1-2.jpg" alt="First slide"> <!-- img-fluid -->
-                <div class="carousel-caption">
-                    <h5>¡Bienvenidos a Tostadas de Chapulín!</h5>
-                    <p>
-                        Descubre una forma saludable y sustentable de alimentarte con insectos comestibles.
-                    </p>
+                <!-- Close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
                 </div>
             </div>
 
-            <div class="carousel-item">
-                <img class="d-block w-100" src="./img/baner-1-3.jpg" alt="Second slide">
-                <div class="carousel-caption">
-                    <h5>¡Bienvenidos a Tostadas de Chapulín!</h5>
-                    <p>
-                        Descubre una forma saludable y sustentable de alimentarte con insectos comestibles.
-                    </p>
+            <div class="nav__actions">
+                <!-- Search button -->
+                <i class="ri-search-line nav__search" id="search-btn"></i>
+
+                <!-- Cart button -->
+                <a href="/pages/carrito.html" class="nav__link cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+
+                <!-- Login button -->
+                <i class="ri-user-line nav__login" id="login-btn"></i>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
                 </div>
             </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselE" data-bs-slide="prev">
+        </nav>
+    </header>
 
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
+    <!--==================== SEARCH ====================-->
+    <div class="search" id="search">
+        <form action="" class="search__form">
+            <i class="ri-search-line search__icon"></i>
+            <input type="search" placeholder="Buscar productos..." class="search__input">
+        </form>
 
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselE" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <i class="ri-close-line search__close" id="search-close"></i>
     </div>
 
+    <!--==================== LOGIN ====================-->
+    <div class="login" id="login">
+        <form action="" class="login__form">
+            <h2 class="login__title">Iniciar Sesión</h2>
+            
+            <div class="login__group">
+                <div>
+                    <label for="email" class="login__label">Correo Electrónico</label>
+                    <input type="email" placeholder="Escribe tu correo electrónico" id="email" class="login__input">
+                </div>
+                
+                <div>
+                    <label for="password" class="login__label">Contraseña</label>
+                    <input type="password" placeholder="Ingresa tu contraseña" id="password" class="login__input">
+                </div>
+            </div>
 
+            <div>
+                <p class="login__signup">
+                    ¿No tienes cuenta? <a href="#">Regístrate</a>
+                </p>
+    
+                <a href="#" class="login__forgot">
+                    Olvidaste tu contraseña
+                </a>
+    
+                <button type="submit" class="login__button">Iniciar Sesión</button>
+            </div>
+        </form>
 
-    <!-- seccion de informacion genral-->
-    <section id="Informacion" class="about section-padding">
+        <i class="ri-close-line login__close" id="login-close"></i>
+    </div>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <img src="/assets/img/bg-image.png" alt="image" class="main__bg">
+    </main>
+
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <div class="row">
+            <div class="hero__content">
+                <h1 class="hero__title">Xōchitōn</h1>
+                <p class="hero__subtitle">Descubre el sabor y los beneficios de los insectos comestibles</p>
+                <a href="/pages/productos.html" class="btn btn-primary">Ver Productos</a>
+            </div>
+        </div>
+    </section>
 
-                <div class="about-text text-dark">
-                    <h2 class="text-center">Alimentación a base de insectos</h2>
-                    <p>
-                        Sumérgete en el fascinante mundo de la entomofagia, una práctica milenaria que hoy resurge como
-                        una solución innovadora, saludable y sostenible frente a los desafíos alimentarios del siglo
-                        XXI. Lejos de ser una simple curiosidad exótica, el consumo de insectos es una costumbre
-                        ancestral presente en diversas culturas del mundo, y particularmente en México, donde forma
-                        parte del legado culinario de nuestras raíces indígenas. Esta práctica no solo conecta al ser
-                        humano con la naturaleza de una manera más consciente y respetuosa, sino que también abre la
-                        puerta a una <b>alimentación a base de insectos</b>, más eficiente y con menor impacto ambiental. <br>
-                        <br>
-
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about__content">
+                <div class="about__text">
+                    <h2 class="about__title">Nuestra Historia</h2>
+                    <p class="about__description">
+                        En Xōchitōn, rescatamos la tradición prehispánica de consumir insectos comestibles, 
+                        ofreciendo productos de la más alta calidad que combinan el sabor auténtico con los 
+                        beneficios nutricionales de estos superalimentos.
                     </p>
+                    <a href="/pages/beneficios.html" class="btn btn-outline">Conoce más</a>
+                </div>
+                <div class="about__image">
+                    <img src="/assets/img/about-bg.jpg" alt="Nuestra Historia">
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="img-entomofagia">
-                        <img src="img/entomofagia.jpg" alt="">
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Productos Destacados</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="/assets/img/products/chapulines-tostados.jpg" alt="Chapulines Tostados">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Chapulines Tostados</h3>
+                        <p class="product-card__price">$120.00</p>
+                        <a href="/pages/productos.html" class="btn btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="/assets/img/products/tostadas-chapulin.jpg" alt="Tostadas de Maíz con Chapulín">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Tostadas de Maíz con Chapulín</h3>
+                        <p class="product-card__price">$85.00</p>
+                        <a href="/pages/productos.html" class="btn btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="/assets/img/products/gusanos-maguey.jpg" alt="Gusanos de Maguey">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Gusanos de Maguey</h3>
+                        <p class="product-card__price">$350.00</p>
+                        <a href="/pages/productos.html" class="btn btn-primary">Ver Detalles</a>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
 
-
-    <footer class="bg-dark p-2 text-center">
+    <!-- Benefits Section -->
+    <section class="benefits">
         <div class="container">
-            <h2>Contacto</h2>
-            <p class="text-center text-white">
-                Tostadas chapulin
-            </p>
-            <p class="text-center text-white">All rights reserved - 2025 @ Made by LAGH</p>
+            <h2 class="section-title">¿Por qué elegir nuestros productos?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="benefit-card__title">Alto Valor Nutricional</h3>
+                    <p class="benefit-card__text">Ricos en proteínas, vitaminas y minerales esenciales.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="benefit-card__title">Sostenibilidad</h3>
+                    <p class="benefit-card__text">Producción amigable con el medio ambiente.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="benefit-card__title">Tradición Cultural</h3>
+                    <p class="benefit-card__text">Rescatamos la riqueza gastronómica prehispánica.</p>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <!--==================== CONTACT - Moved from pages/contacto.html ====================-->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h1 class="contact-hero__title text-center">Contáctanos</h1>
+            <p class="contact-hero__subtitle text-center">Estamos aquí para responder tus preguntas</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="contact-info__title">Información de Contacto</h2>
+                    <div class="contact-info__item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Oaxaca de Juárez, Oaxaca, México</p>
+                    </div>
+                    <div class="contact-info__item">
+                        <i class="fas fa-phone"></i>
+                        <p>+52 951 123 4567</p>
+                    </div>
+                    <div class="contact-info__item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@xochiton.com</p>
+                    </div>
+                    <div class="contact-info__social">
+                        <a href="#" class="contact-info__social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="contact-info__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="contact-info__social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2 class="contact-form__title">Envíanos un Mensaje</h2>
+                    <form id="contactForm" action="https://formspree.io/f/mwpogvgv" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer compacto -->
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__content">
+            <!-- Branding & Descripción -->
+            <div class="footer__section footer__section--brand">
+                <h3 class="footer__title">Xōchitōn</h3>
+                <p class="footer__text">Deliciosos insectos comestibles para una alimentación sostenible y nutritiva.</p>
+            </div>
+            <!-- Redes Sociales -->
+            <div class="footer__section footer__section--social">
+                <h3 class="footer__title">Síguenos</h3>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copyright">&copy; 2024 Xōchitōn. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/components/cart.js"></script>
 </body>
 
 </html>
