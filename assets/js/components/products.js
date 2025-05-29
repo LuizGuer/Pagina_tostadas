@@ -34,12 +34,25 @@ class ProductManager {
     }
 
     init() {
+        console.log('ProductManager init started');
         this.productGrid = document.getElementById('productGrid');
         this.searchInput = document.getElementById('searchInput');
         this.categoryButtons = document.querySelectorAll('.products-filter__category');
         
+        console.log('ProductManager - searchInput element:', this.searchInput);
+
         this.bindEvents();
         this.renderProducts();
+
+        // Check for URL parameter to focus search input
+        const urlParams = new URLSearchParams(window.location.search);
+        console.log('ProductManager - URL search params:', urlParams.toString());
+        if (urlParams.has('focusSearch') && this.searchInput) {
+            console.log('ProductManager - focusSearch parameter found, attempting to focus search input');
+            this.searchInput.focus();
+        } else {
+            console.log('ProductManager - focusSearch parameter not found or searchInput is null');
+        }
     }
 
     bindEvents() {

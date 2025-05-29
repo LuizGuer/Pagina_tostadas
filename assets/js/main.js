@@ -1,5 +1,6 @@
 // Inicialización de componentes
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded and parsed');
     // Inicializar AOS (Animate On Scroll)
     AOS.init({
         duration: 800,
@@ -60,30 +61,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /*=============== SEARCH - From Example ===============*/
-    const search = document.getElementById('search'),
-          searchBtn = document.getElementById('search-btn'),
-          searchClose = document.getElementById('search-close');
+    const searchBtn = document.getElementById('search-btn');
+    const search = document.getElementById('search');
+    const searchClose = document.getElementById('search-close');
 
-    console.log('Search Modal:', search);
-    console.log('Search Button:', searchBtn);
-    console.log('Search Close:', searchClose);
+    console.log('Search Button element (main.js):', searchBtn);
 
-    /* Search show */
+    /* Handle Search button click */
     if (searchBtn) {
-        searchBtn.addEventListener('click', () =>{
-           console.log('Search Button Clicked');
-           search.classList.add('show-search');
-            console.log('Search Modal classes:', search.classList);
+        searchBtn.addEventListener('click', function(event) {
+            console.log('Search Button Clicked (main.js)');
+            // Prevent default link behavior
+            event.preventDefault(); 
+            // Redirect to products page and add a parameter to focus the search input
+            window.location.href = '/pages/productos.html?focusSearch=true';
+            console.log('Redirecting to products page with focus request (main.js)');
         });
-    }
-
-    /* Search hidden */
-    if (searchClose) {
-        searchClose.addEventListener('click', () =>{
-           console.log('Search Close Clicked');
-           search.classList.remove('show-search');
-            console.log('Search Modal classes:', search.classList);
-        });
+    } else {
+        console.log('Search button element not found in main.js!');
     }
 
     /*=============== LOGIN - From Example ===============*/

@@ -12,6 +12,10 @@
     <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <!-- Include AOS library CSS and JS here -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <link rel="stylesheet" href="/assets/css/main.css">
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
@@ -21,54 +25,54 @@
 <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                    <img src="/assets/img/logo.png" alt="Xōchitōn Logo" height="40">
+        <nav class="nav container">
+            <a href="/" class="nav__logo">
+                <img src="/assets/img/logo.png" alt="Xōchitōn Logo" style="height: 40px;">
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/" class="nav__link">Inicio</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="/pages/productos.html" class="nav__link">Productos</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="/pages/beneficios.html" class="nav__link">Beneficios</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="/#contact" class="nav__link">Contacto</a>
+                    </li>
+                </ul>
+
+                <!-- Close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__actions">
+                <!-- Search button -->
+                <a href="/pages/productos.html" class="nav__link nav__search" id="search-btn">
+                    <i class="ri-search-line"></i>
                 </a>
 
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="/" class="nav__link">Inicio</a>
-                        </li>
+                <!-- Cart button -->
+                <a href="/pages/carrito.html" class="nav__link cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
 
-                        <li class="nav__item">
-                            <a href="/pages/productos.html" class="nav__link">Productos</a>
-                        </li>
+                <!-- Login button -->
+                <i class="ri-user-line nav__login" id="login-btn"></i>
 
-                        <li class="nav__item">
-                            <a href="/pages/beneficios.html" class="nav__link">Beneficios</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="/#contact" class="nav__link">Contacto</a>
-                        </li>
-                    </ul>
-
-                    <!-- Close button -->
-                    <div class="nav__close" id="nav-close">
-                        <i class="ri-close-line"></i>
-                    </div>
-                </div>
-
-                <div class="nav__actions">
-                    <!-- Search button -->
-                    <i class="ri-search-line nav__search" id="search-btn"></i>
-
-                    <!-- Cart button -->
-                    <a href="/pages/carrito.html" class="nav__link cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-
-                    <!-- Login button -->
-                    <i class="ri-user-line nav__login" id="login-btn"></i>
-
-                    <!-- Toggle button -->
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="ri-menu-line"></i>
-                    </div>
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
                 </div>
             </div>
         </nav>

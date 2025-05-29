@@ -19,6 +19,28 @@
 @import 'pages/_beneficios.css';
 @import 'pages/_carrito.css';
 
+/* Estilos generales para imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Prevent extra space below image */
+}
+
+/* Estilos específicos para imágenes en tarjetas de producto */
+.product-card .card-img-top {
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover;
+}
+
+/* Estilos para imágenes en secciones de contenido (hero, about, beneficios) */
+.hero img,
+.about img,
+.benefits img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure images cover their area if needed */
+}
+
 /* Estilos globales */
 html {
     scroll-behavior: smooth;
@@ -504,23 +526,29 @@ section {
 /* For large devices */
 @media screen and (min-width: 1023px) {
   .nav {
-    height: calc(var(--header-height) + 2rem);
+    height: calc(var(--header-height) + 1.5rem);
     column-gap: 3rem;
   }
-  .nav__close, 
+  .nav__close,
   .nav__toggle {
     display: none;
   }
   .nav__menu {
     margin-left: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
   }
   .nav__list {
     flex-direction: row;
     column-gap: 3rem;
+    flex-wrap: nowrap;
   }
-
+  .nav__actions {
+    flex-shrink: 0;
+  }
   .login__form {
-    padding: 3rem 2rem 3.5rem;
+    width: 360px;
   }
 }
 
@@ -574,19 +602,48 @@ section {
 }
 
 .contact-form {
-    /* Existing styles for contact-form */
+    background-color: var(--container-color);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
 }
 
 .contact-form__title {
-    /* Existing styles for contact-form__title */
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--title-color);
 }
 
 .form-group {
-    /* Existing styles for form-group */
+    margin-bottom: var(--spacing-md);
 }
 
 .form-control {
-    /* Existing styles for form-control */
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    background-color: var(--body-color);
+    transition: border-color var(--transition-fast);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.25); /* Assuming a primary color variable exists */
+}
+
+.contact-form .btn-primary {
+    margin-top: var(--spacing-md);
+    width: 100%; /* Make button full width on smaller screens */
+}
+
+@media (min-width: 768px) {
+    .contact-form .btn-primary {
+        width: auto; /* Auto width on larger screens */
+    }
 }
 
 .contact-content {
