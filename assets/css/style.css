@@ -1,0 +1,818 @@
+/* Variables globales */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --accent-color: #f1c40f;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Importar componentes */
+@import 'components/navbar.css';
+@import 'components/products.css';
+
+/* Estilos generales adicionales */
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Carrusel */
+.carousel-item {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-caption {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 40px 0;
+}
+
+footer h3 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 50vh;
+    }
+    
+    .section-padding {
+        padding: 40px 0;
+    }
+}
+
+/* Navbar personalizado */
+.bg-customNav {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand img {
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    color: white !important;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Sección de productos */
+.productos-section {
+    padding: 80px 0;
+    background-color: var(--light-bg);
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.product-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.product-description {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Footer mejorado */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 40px 0;
+}
+
+footer h2 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 50vh;
+    }
+    
+    .product-card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Efectos de hover para botones */
+.btn-custom {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.carousel-item img {
+    max-width: 100%;
+    height: 87%;
+}  
+
+/* .imagen1 img {
+    max-width: 100%;
+    height: 87%;
+} */
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #fff;
+}
+
+.section-padding{
+    padding: 40px 0;
+}
+
+.carousel-item {
+    height: 80vh;  /*80% */
+    min-height: 300px;
+} 
+
+.carousel-inner::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%; /*100px*/
+    top: 0;
+    left: 0;
+    /* background: rgba(0,30,82,0.327); */
+    z-index: 1;
+}
+
+.navbar-nav a{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.navbar-dark .navbar-brand{
+    color: #fff;
+    font-size: 19px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover{
+    color: #fff;
+}
+
+.w-100{
+    height: 100vh;
+}
+.navbar-toggler {
+    padding: 1px 5px;
+    font-size: 18px;
+    line-height: 0.3;
+    background-color: #fff;
+   
+}
+/* .date .card {} */
+/* .articulos .card-body i {
+    font-size: 50px;
+} */
+/* .team .card-body i{
+    font-size: 20px;
+} */
+
+.about-text {
+    text-align: justify;
+}
+.pagina-text {
+    text-align: justify;
+}
+.porqueInsectos-text {
+    text-align: justify;
+}
+.formatos-text{
+    text-align: justify;
+}
+.articulo-text{
+    text-align: justify;
+}
+.lugar-text{
+    text-align: justify;
+}
+
+/* imagenes */
+
+.fechas-img {
+    margin-top: 85px;
+}
+
+.img-entomofagia img {
+    display: block;
+    margin: 0 auto;
+    width: 35%;
+    height: 35%;
+    border: 1px solid #000;
+    border-radius: 4%;
+}
+.img-chapulin img {
+    display: block;
+    margin: 0 auto;
+    width: 35%;
+    height: 35%;
+}
+
+.insectos_info img {
+    display: block;
+    margin: 0 auto;
+    width: 35%;
+    height: 35%;
+}
+.chapulin_info img {
+    display: block;
+    margin: 0 auto;
+    width: 35%;
+    height: 35%;
+}
+
+.chapulines_oaxaca img {
+    display: block;
+    margin: 0 auto;
+    width: 35%;
+    height: 35%;
+}
+
+.img-lugarMap {
+    width: 60%;
+    height: auto; 
+}
+#Tabla-fechas th.bg-custom{
+    background-color: #002849; 
+    color: #fff; 
+}
+#Tabla-comite th.bg-custom {
+    background-color: #002849; 
+    color: #fff;
+}
+.container-img-logos {
+    max-width: 100%;
+    overflow-x: hidden; /* Para evitar la barra de desplazamiento horizontal */
+}
+.img-logo{
+    width: 6%;
+    height: auto; 
+    /* padding: 0px 5px 0 5px; */
+    margin: 5px;
+   padding: 3px;
+}
+.img-fasbit {
+    width: 12%;
+    height: auto;    
+}
+
+.img-guanajuato{
+    width: 8%;
+    height: auto; 
+}
+.img-UTM {
+    width: 8%;
+    height: auto; 
+}
+
+.navbar-nav .nav-link {
+    color: white; /* Letras blancas */
+}
+
+.carousel-caption {
+    bottom: 200px;
+    z-index: 2;
+}
+
+.carousel-caption h5{
+    font-size: 55px;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+.carousel-caption p{
+    width: 60%;
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.9;
+} 
+
+@media(max-width: 767px) {
+    
+    .carousel-item img {
+        max-height: 300px; 
+    }
+  
+    .container-img-logos {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .img-logo{
+        width: 6%;
+        height: auto; 
+        /* padding: 0px 5px 0 5px; */
+        margin: 5px;
+       padding: 3px;
+    }
+    .img-fasbit {
+        width: 12%;
+        height: auto;    
+    }
+    
+    .img-guanajuato{
+        width: 8%;
+        height: auto; 
+    }
+    .img-UTM {
+        width: 12%;
+        height: auto; 
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+    .carousel-item {
+        height: 70vh;
+    }
+    .w-100{
+     height: 70vh;
+    }
+    .about-text {
+        padding: top 50px;
+        text-align: justify;
+    }
+    .fechas-text {
+        padding: top 50px;
+        text-align: justify;
+    }
+    .formatos-text{
+        padding: top 50px;
+        text-align: justify;
+    }
+    .articulo-text{
+        padding: top 50px;
+        text-align: justify;
+    }
+    .lugar-text{
+        padding: top 50px;
+        text-align: justify;
+    }
+    .card{
+        margin-bottom: 30px;
+    }
+    .section-padding{
+        padding: 50px 0;
+    }
+    .about-img{
+        width: 70%;
+        height: auto; 
+        padding: 1px;
+        padding-bottom: 15px;
+        display: block; /* Asegúrate de que la imagen sea un elemento de bloque */
+        margin: 0 auto; 
+    }
+    .carrusel div{
+        height: 290px;
+    }
+
+    .carousel-caption {
+        bottom: -50px; /* Ajusta según necesites */
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .carousel-caption h5{
+        font-size: 17px;
+        margin-top: 10px;
+    }
+    .carousel-caption p{
+        width: 80%;
+        line-height: 1.5;
+        font-size: 12px;
+    }
+}
+
+.logo_chapulin{
+    width: 70px; 
+    height: auto;
+}
+
+/* producto  */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&display=swap');
+
+/* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+} */
+
+/* body {
+	font-family: 'Ubuntu';
+	max-width: 1200px;
+	margin: 0 auto;
+} 
+
+img {
+	max-width: 100%;
+}
+
+/* header {
+	display: flex;
+	align-items: center;
+	padding: 30px;
+	justify-content: center;
+} */
+
+.container-title {
+	padding: 30px;
+	background-color: #fff;
+	margin-bottom: 50px;
+	color: #222;
+}
+
+main {
+	display: flex;
+	gap: 30px;
+	margin-bottom: 80px;
+}
+
+.container-img {
+	background-color: #fff;
+	flex: 1;
+}
+
+.container-info-product {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.container-price {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e4e4e4;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.container-price span {
+	font-size: 24px;
+	font-weight: 300;
+}
+
+.container-details-product {
+	padding: 30px 0;
+}
+
+.form-group {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	margin-bottom: 15px;
+}
+
+.form-group label {
+	width: 100px;
+	color: #222;
+	font-weight: 700;
+}
+
+.form-group select {
+	width: 300px;
+	border: none;
+	padding: 12px 15px;
+	background-color: #f7f7f7;
+	outline: none;
+	color: #666;
+}
+
+.btn-clean {
+	border: none;
+	background: none;
+	color: #666;
+	margin-left: 120px;
+	cursor: pointer;
+}
+
+.btn-clean:hover {
+	color: #1bbeb4;
+}
+
+.container-add-cart {
+	display: flex;
+	gap: 20px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.container-quantity {
+	position: relative;
+}
+
+.input-quantity {
+	background-color: #f7f7f7;
+	border: none;
+	padding: 10px;
+	width: 60px;
+	height: 100%;
+	color: #666;
+	font-weight: 500;
+	line-height: 0;
+}
+
+.input-quantity:focus {
+	outline: none;
+}
+
+.input-quantity::-webkit-inner-spin-button,
+.input-quantity::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.btn-increment-decrement {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 7px;
+	right: 7px;
+}
+
+.btn-increment-decrement i {
+	font-size: 11px;
+	color: #666;
+	cursor: pointer;
+}
+
+.fa-chevron-down:hover {
+	color: #1bbeb4;
+}
+
+.fa-chevron-up:hover {
+	color: #1bbeb4;
+}
+
+.btn-add-to-cart {
+	border: none;
+	background-color: #252525;
+	padding: 10px;
+	color: #f7f7f7;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.btn-add-to-cart:hover {
+	color: #1bbeb4;
+}
+
+.hidden {
+	display: none;
+}
+
+.container-description,
+.container-additional-information,
+.container-reviews {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid #e4e4e4;
+	padding: 10px 0;
+}
+
+.title-description,
+.title-additional-information,
+.title-reviews {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.title-description h4,
+.title-additional-information h4,
+.title-reviews h4 {
+	font-weight: 300;
+	color: #666;
+	font-size: 14px;
+}
+
+.text-description,
+.text-additional-information,
+.text-reviews {
+	font-size: 13px;
+	color: #252525;
+	line-height: 22px;
+	margin-top: 25px;
+}
+
+.container-social {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	align-items: center;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.container-social span {
+	font-weight: 300;
+	color: #252525;
+}
+
+.container-buttons-social {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
+
+.container-buttons-social a:link,
+.container-buttons-social a:visited {
+	color: #666;
+	font-size: 15px;
+}
+
+.container-buttons-social a:hover {
+	color: #1bbeb4;
+}
+
+.container-related-products h2 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.card-list-products {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 25px;
+}
+
+.card {
+	cursor: pointer;
+}
+
+.card-img {
+	background: transparent;
+	margin-bottom: 15px;
+}
+
+.card-img img {
+	height: 400px;
+	object-fit: cover;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.info-card {
+	display: flex;
+	justify-content: space-between;
+}
+
+.text-product {
+	color: #252525;
+	font-weight: 300;
+	line-height: 1.4;
+}
+
+.text-product h3{
+    color: inherit;
+    font-weight: inherit;
+    font-size: 15px;
+}
+
+.text-product h3:hover{
+    color: #1bbeb4;
+}
+
+.text-product p{
+    color: #666;
+    font-size: 13px;
+}
+
+.text-product p:hover{
+    color: #1bbeb4;
+}
+
+footer {
+	padding: 30px;
+	background-color: #eee;
+	margin-top: 50px;
+	color: #222;
+}
+
+
+
+
+
+
+
+
+
+

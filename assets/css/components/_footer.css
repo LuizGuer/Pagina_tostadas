@@ -1,0 +1,105 @@
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: var(--spacing-lg) 0 var(--spacing-md) 0;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.footer__container {
+    width: 100%;
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    box-sizing: border-box;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-xl);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--white-alpha-10, rgba(255,255,255,0.1));
+}
+
+.footer__section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+}
+
+.footer__section--brand .footer__title {
+    font-size: 1.2rem;
+    margin-bottom: 0.25em;
+}
+
+.footer__text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.footer__section--social {
+    align-items: flex-end;
+}
+
+.footer__section--social .footer__title {
+    font-size: 1.05rem;
+    margin-bottom: 0.25em;
+}
+
+.footer__social {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.footer__social-link {
+    color: var(--white);
+    font-size: 1.35rem;
+    transition: color var(--transition-fast), transform 0.12s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer__social-link:hover {
+    color: var(--accent-color);
+    transform: scale(1.14);
+}
+
+.footer__bottom {
+    text-align: center;
+    margin-top: var(--spacing-sm);
+}
+
+.footer__copyright {
+    font-size: 0.93rem;
+    margin: 0;
+    color: var(--white-alpha-70, rgba(255,255,255,0.7));
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .footer__content {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+        padding: 0 0 var(--spacing-sm) 0;
+    }
+    .footer__section {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding: var(--spacing-md) 0;
+    }
+    .footer__container {
+        padding: 0 var(--spacing-xs);
+    }
+}
