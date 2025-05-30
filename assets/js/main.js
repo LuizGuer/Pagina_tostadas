@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (searchBtn) {
         searchBtn.addEventListener('click', function(event) {
             event.preventDefault(); 
-            window.location.href = '/pages/productos.html?focusSearch=true';
+            window.location.href = '../pages/productos.html?focusSearch=true';
         });
     }
 

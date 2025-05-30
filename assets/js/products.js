@@ -6,8 +6,8 @@ const products = [
         description: 'Chapulines tradicionales de Oaxaca',
         price: 120.00,
         category: 'chapulines',
-        image: '/assets/img/chapulin.jpg',
-        detailUrl: '/pages/chapulines.html'
+        image: '../assets/img/chapulin.jpg',
+        detailUrl: 'chapulines.html'
     },
     {
         id: 2,
@@ -15,8 +15,8 @@ const products = [
         description: 'Tostadas artesanales con chapulines',
         price: 45.00,
         category: 'chapulines',
-        image: '/assets/img/Chapulintostada.png',
-        detailUrl: '/pages/tostadas_chapulin.html'
+        image: '../assets/img/Chapulintostada.png',
+        detailUrl: 'tostadas_chapulin.html'
     },
     {
         id: 3,
@@ -24,8 +24,8 @@ const products = [
         description: 'Gusanos de maguey tradicionales',
         price: 360.00,
         category: 'gusanos',
-        image: '/assets/img/istockphoto-1090755844-612x612.jpg',
-        detailUrl: '/pages/gusanos.html'
+        image: '../assets/img/istockphoto-1090755844-612x612.jpg',
+        detailUrl: 'gusanos.html'
     }
 ];
 
