@@ -15,7 +15,6 @@ body {
 }
 
 /* Importar componentes */
-@import 'components/_navbar.css';
 @import 'components/products.css';
 
 /* Estilos generales adicionales */

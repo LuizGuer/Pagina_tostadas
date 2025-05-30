@@ -1,22 +1,32 @@
+/* Variables locales */
+:root {
+    --header-height: 90px;
+    --mobile-menu-width: 80%;
+    --mobile-menu-padding: 4.5rem 2rem 4rem;
+    --mobile-menu-transition: 0.4s;
+}
+
+/* Header y navegación principal */
 .header {
     background-color: var(--body-color, white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: var(--z-fixed, 100);
-    height: var(--header-height, 90px);
+    height: var(--header-height);
     display: flex;
     align-items: center;
 }
 
 .nav {
+    height: var(--header-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0;
+    padding: 0 var(--spacing-md, 1rem);
 }
 
 .nav__logo {
@@ -27,6 +37,11 @@
 .nav__logo img {
     height: 70px;
     vertical-align: middle;
+    transition: transform var(--transition-fast, 0.3s);
+}
+
+.nav__logo img:hover {
+    transform: scale(1.1);
 }
 
 .nav__menu {
@@ -55,7 +70,7 @@
     color: var(--title-color, #333);
     text-decoration: none !important;
     font-weight: var(--font-medium, 500);
-    transition: color 0.3s ease;
+    transition: color var(--transition-fast, 0.3s);
     position: relative;
     display: flex;
     align-items: center;
@@ -69,7 +84,7 @@
     bottom: -4px;
     left: 0;
     background-color: var(--first-color, #4CAF50);
-    transition: width 0.3s ease;
+    transition: width var(--transition-fast, 0.3s);
 }
 
 .nav__link:hover::after {
@@ -87,21 +102,34 @@
     height: 100%;
 }
 
-.nav__search, .cart-icon {
-    color: var(--title-color, #333);
-    text-decoration: none !important;
+.nav__search, 
+.nav__login, 
+.nav__toggle, 
+.nav__close {
     font-size: 1.25rem;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
+    color: var(--title-color, #333);
+    cursor: pointer;
+    transition: color var(--transition-fast, 0.3s);
 }
 
-.nav__search:hover, .cart-icon:hover {
+.nav__search:hover, 
+.nav__login:hover, 
+.nav__toggle:hover {
     color: var(--first-color, #4CAF50);
 }
 
 .cart-icon {
     position: relative;
+    color: var(--title-color, #333);
+    text-decoration: none !important;
+    font-size: 1.25rem;
+    transition: color var(--transition-fast, 0.3s);
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon:hover {
+    color: var(--first-color, #4CAF50);
 }
 
 .cart-count {
@@ -115,14 +143,13 @@
     border-radius: 50%;
 }
 
-/* Responsive */
-@media (max-width: 1023px) {
+/* Estilos para móvil */
+@media screen and (max-width: 1023px) {
     .nav__toggle {
         display: block;
         font-size: 1.25rem;
         cursor: pointer;
-        color: var(--title-color, #333);
-        z-index: 102;
+        z-index: var(--z-fixed);
     }
 
     .nav__menu {
@@ -130,12 +157,12 @@
         top: 0;
         right: -100%;
         background-color: var(--body-color, white);
-        width: 80%;
+        width: var(--mobile-menu-width);
         height: 100vh;
-        padding: 4.5rem 2rem 4rem;
-        transition: right 0.4s ease;
+        padding: var(--mobile-menu-padding);
+        transition: right var(--mobile-menu-transition) ease;
         box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
-        z-index: 101;
+        z-index: var(--z-fixed);
     }
 
     .nav__list {
@@ -161,30 +188,38 @@
         right: 1.5rem;
         font-size: 1.5rem;
         cursor: pointer;
-        color: var(--title-color, #333);
-        z-index: 102;
+        z-index: calc(var(--z-fixed) + 1);
     }
 
     .show-menu {
         right: 0;
     }
 
-    .nav__toggle, .nav__close {
+    .nav__toggle, 
+    .nav__close {
         display: block;
     }
 }
 
-@media (min-width: 1024px) {
-    .nav__toggle, .nav__close {
+/* Estilos para desktop */
+@media screen and (min-width: 1024px) {
+    .nav__toggle, 
+    .nav__close {
         display: none;
     }
 
     .nav__menu {
+        margin-left: auto;
         position: static;
         width: auto;
         height: auto;
         padding: 0;
         background: none;
         box-shadow: none;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        column-gap: 3rem;
     }
 } 

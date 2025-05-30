@@ -48,6 +48,11 @@ class ProductDetail {
                 window.shoppingCart.addItem(productInfo);
             }
             
+            // Resetear el contador a 1 después de agregar al carrito
+            if (this.quantityInput) {
+                this.quantityInput.value = "1";
+            }
+            
             // Mostrar mensaje de éxito
             this.showNotification('Producto agregado al carrito');
         }

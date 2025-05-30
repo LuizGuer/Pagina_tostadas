@@ -19,7 +19,10 @@ class ShoppingCart {
 
     bindEvents() {
         if (this.clearCartBtn) {
-            this.clearCartBtn.addEventListener('click', () => this.clearCart());
+            this.clearCartBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.clearCart();
+            });
         }
     }
 
@@ -43,14 +46,21 @@ class ShoppingCart {
     }
 
     removeItem(productId) {
-        this.items = this.items.filter(item => item.id !== productId);
-        this.updateCart();
-        this.saveCart();
+        const itemToRemove = this.items.find(item => item.id === productId);
+        if (itemToRemove && confirm(`¿Estás seguro de que deseas eliminar ${itemToRemove.name} del carrito?`)) {
+            this.items = this.items.filter(item => item.id !== productId);
+            this.updateCart();
+            this.saveCart();
+        }
     }
 
     updateQuantity(productId, quantity) {
         const item = this.items.find(item => item.id === productId);
         if (item) {
+            if (quantity <= 0 && !confirm('¿Estás seguro de que deseas eliminar este producto del carrito?')) {
+                return;
+            }
+            
             item.quantity = quantity;
             if (item.quantity <= 0) {
                 this.removeItem(productId);
@@ -62,9 +72,17 @@ class ShoppingCart {
     }
 
     clearCart() {
-        this.items = [];
-        this.updateCart();
-        this.saveCart();
+        if (this.items.length === 0) {
+            alert('El carrito ya está vacío');
+            return;
+        }
+
+        if (confirm('¿Estás seguro de que deseas vaciar el carrito? Esta acción no se puede deshacer.')) {
+            this.items = [];
+            this.updateCart();
+            this.saveCart();
+            alert('El carrito ha sido vaciado');
+        }
     }
 
     updateCart() {
