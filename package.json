@@ -1,0 +1,11 @@
+{
+  "name": "xochiton",
+  "version": "1.0.0",
+  "description": "Tienda en línea de tostadas y productos de insectos comestibles",
+  "scripts": {
+    "start": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+} 
