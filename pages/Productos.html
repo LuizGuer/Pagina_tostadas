@@ -16,6 +16,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -25,7 +29,6 @@
 </head>
 
 <body>
-    <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
             <a href="/" class="nav__logo">
@@ -59,7 +62,7 @@
 
             <div class="nav__actions">
                 <!-- Search button -->
-                <a href="/pages/productos.html?focusSearch=true" class="nav__link nav__search" id="search-btn">
+                <a href="/pages/productos.html" class="nav__link nav__search" id="search-btn">
                     <i class="ri-search-line"></i>
                 </a>
 
@@ -120,69 +123,40 @@
         <i class="ri-close-line login__close" id="login-close"></i>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Products Section -->
+    <section class="products-page" style="margin-top: 100px;">
         <div class="container">
-            <h1 class="hero__title">Nuestros Productos</h1>
-            <p class="hero__subtitle">Descubre nuestra selección de insectos comestibles tradicionales</p>
-        </div>
-    </section>
+            <h1 class="text-center mb-5">Nuestros Productos</h1>
 
-    <!-- Filter Section -->
-    <section class="products-filter">
-        <div class="container">
-            <div class="products-filter__content">
-                <div class="products-filter__search">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="Buscar productos...">
-                </div>
-                <div class="products-filter__categories">
-                    <button class="products-filter__category active" data-category="all">Todos</button>
-                    <button class="products-filter__category" data-category="chapulines">Chapulines</button>
-                    <button class="products-filter__category" data-category="tostadas">Tostadas</button>
-                    <button class="products-filter__category" data-category="gusanos">Gusanos</button>
+            <!-- Search and Filter Bar -->
+            <div class="search-filter-bar mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="search-box">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Buscar productos...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="filter-options d-flex justify-content-end">
+                            <select id="categoryFilter" class="form-select me-2">
+                                <option value="all">Todas las categorías</option>
+                                <option value="chapulines">Chapulines</option>
+                                <option value="gusanos">Gusanos</option>
+                            </select>
+                            <select id="sortFilter" class="form-select">
+                                <option value="default">Ordenar por</option>
+                                <option value="price-low">Precio: Menor a Mayor</option>
+                                <option value="price-high">Precio: Mayor a Menor</option>
+                                <option value="name">Nombre</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Products Grid -->
-    <section class="products">
-        <div class="container">
-            <div class="row" id="productGrid">
-                <div class="col-md-4">
-                    <div class="card product-card">
-                        <img src="/assets/img/chapulin.jpg class="card-img-top" alt="Chapulines Tostados">
-                        <div class="card-body">
-                            <h5 class="card-title">Chapulines Tostados</h5>
-                            <p class="card-text">Chapulines tradicionales de Oaxaca</p>
-                            <p class="price">$120.00 MXN</p>
-                            <a href="/pages/chapulines.html" class="btn btn-primary">Ver más detalles</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card product-card">
-                        <img src="/assets/img/Chapulintostada.png" class="card-img-top" alt="Tostadas de Maíz con Chapulín">
-                        <div class="card-body">
-                            <h5 class="card-title">Tostadas de Maíz con Chapulín</h5>
-                            <p class="card-text">Tostadas artesanales con chapulines</p>
-                            <p class="price">$40.00 MXN</p>
-                            <a href="/pages/tostadas_chapulin.html" class="btn btn-primary">Ver más detalles</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card product-card">
-                        <img src="/assets/img/istockphoto-1090755844-612x612.jpg" class="card-img-top" alt="Gusanos de Maguey">
-                        <div class="card-body">
-                            <h5 class="card-title">Gusanos de Maguey</h5>
-                            <p class="card-text">Gusanos de maguey tradicionales</p>
-                            <p class="price">$350.00 MXN</p>
-                            <a href="/pages/gusanos.html" class="btn btn-primary">Ver más detalles</a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Products Grid -->
+            <div class="row" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
             </div>
         </div>
     </section>
@@ -213,13 +187,12 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/components/cart.js"></script>
-    <script src="/assets/js/components/product-filter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/components/cart.js"></script>
+    <script src="/assets/js/products.js"></script>
 </body>
 
 </html>

@@ -33,78 +33,81 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /*=============== SHOW MENU - From Example ===============*/
-    const navMenu = document.getElementById('nav-menu'),
-          navToggle = document.getElementById('nav-toggle'),
-          navClose = document.getElementById('nav-close');
+    /*=============== SHOW MENU ===============*/
+    const navMenu = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const navClose = document.getElementById('nav-close');
+    const navLinks = document.querySelectorAll('.nav__link');
 
-    console.log('Nav Menu:', navMenu);
-    console.log('Nav Toggle:', navToggle);
-    console.log('Nav Close:', navClose);
+    // Función para cerrar el menú
+    const closeMenu = () => {
+        if (navMenu) {
+            navMenu.classList.remove('show-menu');
+        }
+    };
 
-    /* Menu show */
+    // Asegurarse de que el menú esté cerrado al inicio
+    closeMenu();
+
+    // Mostrar menú
     if (navToggle) {
-        navToggle.addEventListener('click', () =>{
-           console.log('Nav Toggle Clicked');
-           navMenu.classList.add('show-menu');
-           console.log('Nav Menu classes:', navMenu.classList);
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navMenu.classList.add('show-menu');
         });
     }
 
-    /* Menu hidden */
+    // Ocultar menú
     if (navClose) {
-        navClose.addEventListener('click', () =>{
-           console.log('Nav Close Clicked');
-           navMenu.classList.remove('show-menu');
-           console.log('Nav Menu classes:', navMenu.classList);
+        navClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeMenu();
         });
     }
 
-    /*=============== SEARCH - From Example ===============*/
-    const searchBtn = document.getElementById('search-btn');
-    const search = document.getElementById('search');
-    const searchClose = document.getElementById('search-close');
+    // Ocultar menú cuando se hace clic en un enlace
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMenu();
+        });
+    });
 
-    console.log('Search Button element (main.js):', searchBtn);
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (e) => {
+        if (navMenu && navMenu.classList.contains('show-menu')) {
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                closeMenu();
+            }
+        }
+    });
+
+    /*=============== SEARCH ===============*/
+    const searchBtn = document.getElementById('search-btn');
 
     /* Handle Search button click */
     if (searchBtn) {
         searchBtn.addEventListener('click', function(event) {
-            console.log('Search Button Clicked (main.js)');
-            // Prevent default link behavior
             event.preventDefault(); 
-            // Redirect to products page and add a parameter to focus the search input
             window.location.href = '/pages/productos.html?focusSearch=true';
-            console.log('Redirecting to products page with focus request (main.js)');
         });
-    } else {
-        console.log('Search button element not found in main.js!');
     }
 
-    /*=============== LOGIN - From Example ===============*/
-    const login = document.getElementById('login'),
-          loginBtn = document.getElementById('login-btn'),
-          loginClose = document.getElementById('login-close');
-
-    console.log('Login Modal:', login);
-    console.log('Login Button:', loginBtn);
-    console.log('Login Close:', loginClose);
+    /*=============== LOGIN ===============*/
+    const login = document.getElementById('login');
+    const loginBtn = document.getElementById('login-btn');
+    const loginClose = document.getElementById('login-close');
 
     /* Login show */
     if (loginBtn) {
-        loginBtn.addEventListener('click', () =>{
-           console.log('Login Button Clicked');
-           login.classList.add('show-login');
-            console.log('Login Modal classes:', login.classList);
+        loginBtn.addEventListener('click', () => {
+            login.classList.add('show-login');
         });
     }
 
     /* Login hidden */
     if (loginClose) {
-        loginClose.addEventListener('click', () =>{
-           console.log('Login Close Clicked');
-           login.classList.remove('show-login');
-            console.log('Login Modal classes:', login.classList);
+        loginClose.addEventListener('click', () => {
+            login.classList.remove('show-login');
         });
     }
 }); 
