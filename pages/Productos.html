@@ -38,11 +38,11 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="/" class="nav__link">Inicio</a>
+                        <a href="/" class="nav__link active">Inicio</a>
                     </li>
 
                     <li class="nav__item">
-                        <a href="/pages/productos.html" class="nav__link active">Productos</a>
+                        <a href="/pages/productos.html" class="nav__link">Productos</a>
                     </li>
 
                     <li class="nav__item">
@@ -61,70 +61,24 @@
             </div>
 
             <div class="nav__actions">
-                <!-- Search button -->
-                <a href="/pages/productos.html" class="nav__link nav__search" id="search-btn">
+                 <!-- Search button -->
+                 <a href="/pages/productos.html" class="nav__link nav__search" id="search-btn">
                     <i class="ri-search-line"></i>
                 </a>
-
                 <!-- Cart button -->
                 <a href="/pages/carrito.html" class="nav__link cart-icon">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
                 </a>
 
-                <!-- Toggle button -->
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="ri-menu-line"></i>
-                </div>
+                
             </div>
         </nav>
     </header>
 
-    <!--==================== SEARCH ====================-->
-    <div class="search" id="search">
-        <form action="" class="search__form">
-            <i class="ri-search-line search__icon"></i>
-            <input type="search" placeholder="Buscar productos..." class="search__input">
-        </form>
-
-        <i class="ri-close-line search__close" id="search-close"></i>
-    </div>
-
-    <!--==================== LOGIN ====================-->
-    <div class="login" id="login">
-        <form action="" class="login__form">
-            <h2 class="login__title">Iniciar Sesión</h2>
-            
-            <div class="login__group">
-                <div>
-                    <label for="email" class="login__label">Correo Electrónico</label>
-                    <input type="email" placeholder="Escribe tu correo electrónico" id="email" class="login__input">
-                </div>
-                
-                <div>
-                    <label for="password" class="login__label">Contraseña</label>
-                    <input type="password" placeholder="Ingresa tu contraseña" id="password" class="login__input">
-                </div>
-            </div>
-
-            <div>
-                <p class="login__signup">
-                    ¿No tienes cuenta? <a href="#">Regístrate</a>
-                </p>
-
-                <a href="#" class="login__forgot">
-                    Olvidaste tu contraseña
-                </a>
-
-                <button type="submit" class="login__button">Iniciar Sesión</button>
-            </div>
-        </form>
-
-        <i class="ri-close-line login__close" id="login-close"></i>
-    </div>
 
     <!-- Products Section -->
-    <section class="products-page" style="margin-top: 100px;">
+    <section class="products-page" style="margin-top: 10px;">
         <div class="container">
             <h1 class="text-center mb-5">Nuestros Productos</h1>
 

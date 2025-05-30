@@ -18,63 +18,107 @@
 @import 'pages/_beneficios.css';
 @import 'pages/_carrito.css';
 
-
+/* Carrusel */
 .carousel-item {
-    height: 90vh;  /*80% */
+    height: 80vh;
     min-height: 300px;
 }
 
-.carousel-inner::before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%; /*100px*/
-    top: 0;
-    left: 0;
-    /* background: rgba(0,30,82,0.327);  */
-    z-index: 1;
+.carousel-inner {
+    position: relative;
+}
+
+.carousel-inner::before {
+    display: none !important;
 }
 
 .carousel-caption {
-    bottom: 200px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    padding: 1rem;
+    background: none !important;
+    box-shadow: none !important;
 }
 
-.carousel-caption h5{
-    font-size: 55px;
-    letter-spacing: 2px;
-    margin-top: 25px;
+.carousel-caption h5 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
 }
-.carousel-caption p{
-    width: 60%;
-    margin: auto;
-    font-size: 20px;
-    line-height: 1.9;
-} 
 
+.carousel-caption p {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: var(--white);
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: 600px;
+}
 
+/* Media queries para el carrusel */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 60vh;
+    }
+    
+    .carousel-caption {
+        top: 35%;
+    }
+}
 
+@media (max-width: 576px) {
+    .carousel-item {
+        height: 50vh;
+    }
+    
+    .carousel-caption {
+        top: 30%;
+    }
+}
+
+/* Desactivar transiciones del carrusel */
+.carousel-item {
+    transition: none !important;
+}
+
+.carousel-item.active {
+    transition: none !important;
+}
+
+.carousel-inner {
+    transition: none !important;
+}
+
+.carousel-caption {
+    transition: none !important;
+}
 
 /* Estilos generales para imágenes */
 img {
     max-width: 100%;
     height: auto;
-    display: block; /* Prevent extra space below image */
+    display: block;
 }
 
 /* Estilos específicos para imágenes en tarjetas de producto */
 .product-card .card-img-top {
-    height: 200px; /* Adjust height as needed */
+    height: 200px;
     object-fit: cover;
 }
 
-/* Estilos para imágenes en secciones de contenido (hero, about, beneficios) */
+/* Estilos para imágenes en secciones de contenido */
 .hero img,
 .about img,
 .benefits img {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Ensure images cover their area if needed */
+    object-fit: cover;
 }
 
 /* Estilos globales */
@@ -127,18 +171,19 @@ section {
     width: 100%;
 }
 
+/* Botones */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-sm) var(--spacing-lg);
+    padding: 0.75rem 1.5rem;
     border-radius: var(--border-radius-md);
     font-weight: 600;
     text-decoration: none;
-    transition: all var(--transition-fast);
+    transition: all 0.3s ease;
     cursor: pointer;
     border: none;
-    font-size: 0.9rem;
+    font-size: clamp(0.875rem, 1vw, 1rem);
 }
 
 .btn-primary {
@@ -177,6 +222,7 @@ section {
     width: 100%;
 }
 
+/* Utilidades de texto */
 .text-center {
     text-align: center;
 }
@@ -193,6 +239,7 @@ section {
     color: var(--accent-color);
 }
 
+/* Fondos */
 .bg-primary {
     background-color: var(--primary-color);
 }
@@ -234,19 +281,28 @@ section {
 
 @media (max-width: 992px) {
     .container {
-        max-width: var(--container-lg);
+        max-width: 720px;
     }
 }
 
 @media (max-width: 768px) {
     .container {
-        max-width: var(--container-md);
+        max-width: 540px;
+    }
+    
+    section {
+        padding: var(--spacing-lg) 0;
     }
 }
 
 @media (max-width: 576px) {
     .container {
-        max-width: var(--container-sm);
+        max-width: 100%;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    section {
+        padding: var(--spacing-md) 0;
     }
 }
 

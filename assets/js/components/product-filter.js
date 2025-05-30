@@ -13,7 +13,7 @@ class ProductFilter {
                 id: 2,
                 name: 'Tostadas de Maíz con Chapulín',
                 description: 'Tostadas artesanales con chapulines',
-                price: 40.00,
+                price: 45.00,
                 category: 'tostadas',
                 url: '/pages/tostadas_chapulin.html'
             },
@@ -21,7 +21,7 @@ class ProductFilter {
                 id: 3,
                 name: 'Gusanos de Maguey',
                 description: 'Gusanos de maguey tradicionales',
-                price: 350.00,
+                price: 360.00,
                 category: 'gusanos',
                 url: '/pages/gusanos.html'
             }

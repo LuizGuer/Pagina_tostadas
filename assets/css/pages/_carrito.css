@@ -38,6 +38,14 @@
     border-bottom: none;
 }
 
+/* Contenedor de la imagen del carrito */
+.cart-item-image-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-sm);
+}
+
 .cart-item__image {
     width: 100px;
     height: 100px;
@@ -49,6 +57,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Ajustes de responsividad para la imagen */
+.cart-item-image-col img {
+    max-width: 80px; /* Tamaño máximo para la imagen en móviles */
+    height: auto; /* Mantener proporción */
+    display: block;
 }
 
 .cart-item__content {
@@ -186,14 +201,34 @@
 
 @media (max-width: 768px) {
     .cart-item {
-        grid-template-columns: 80px 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .cart-item-image-col {
+        order: -1; /* Poner la imagen arriba en móviles */
+        flex-basis: 100%; /* Ocupar todo el ancho */
+    }
+
+    .cart-item-image-col img {
+        max-width: 100px; /* Aumentar tamaño máximo en tablets */
+        height: auto;
+    }
+
+    .cart-item__image {
+        width: auto !important; /* Permitir que el tamaño sea controlado por max-width/height */
+        height: auto !important;
     }
 
     .cart-item__actions {
-        grid-column: 1 / -1;
+        grid-column: auto; /* Resetear la columna */
         display: flex;
-        justify-content: space-between;
+        justify-content: center; /* Centrar acciones en móviles */
         align-items: center;
+        width: 100%; /* Ocupar todo el ancho */
+    }
+
+    .cart-item__quantity {
+        justify-content: center; /* Centrar controles de cantidad */
     }
 }
 
@@ -207,7 +242,19 @@
         text-align: center;
     }
 
+    .cart-item-image-col {
+         flex-basis: 100%;
+         order: -1;
+    }
+
+    .cart-item-image-col img {
+        max-width: 80px; /* Tamaño máximo más pequeño en móviles muy pequeños */
+        height: auto;
+    }
+
     .cart-item__image {
+        width: auto !important;
+        height: auto !important;
         margin: 0 auto;
     }
 
@@ -218,5 +265,6 @@
     .cart-item__actions {
         flex-direction: column;
         gap: var(--spacing-sm);
+        justify-content: center;
     }
 } 

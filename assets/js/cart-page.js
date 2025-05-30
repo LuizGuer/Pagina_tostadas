@@ -9,21 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function createCartItemHTML(item) {
         return `
             <div class="card mb-3" data-item-id="${item.id}">
-                <div class="row g-0">
-                    <div class="col-md-2">
+                <div class="row g-0 align-items-center">
+                    <div class="col-4 col-md-2 cart-item-image-col">
                         <img src="${item.image}" class="img-fluid rounded-start" alt="${item.name}">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-8 col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">${item.name}</h5>
-                            <div class="d-flex align-items-center">
+                            <h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${item.name}</h5>
+                            <div class="d-flex align-items-center" style="flex-wrap: wrap;">
                                 <button class="btn btn-sm btn-outline-secondary me-2 decrease-quantity">-</button>
                                 <span class="quantity-display">${item.quantity}</span>
                                 <button class="btn btn-sm btn-outline-secondary ms-2 increase-quantity">+</button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-12 col-md-2 text-end">
                         <div class="card-body">
                             <p class="card-text">$${(item.price * item.quantity).toFixed(2)} MXN</p>
                             <button class="btn btn-sm btn-danger remove-item">

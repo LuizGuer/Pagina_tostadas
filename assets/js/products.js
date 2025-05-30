@@ -13,7 +13,7 @@ const products = [
         id: 2,
         name: 'Tostadas de Maíz con Chapulín',
         description: 'Tostadas artesanales con chapulines',
-        price: 40.00,
+        price: 45.00,
         category: 'chapulines',
         image: '/assets/img/Chapulintostada.png',
         detailUrl: '/pages/tostadas_chapulin.html'
@@ -22,7 +22,7 @@ const products = [
         id: 3,
         name: 'Gusanos de Maguey',
         description: 'Gusanos de maguey tradicionales',
-        price: 350.00,
+        price: 360.00,
         category: 'gusanos',
         image: '/assets/img/istockphoto-1090755844-612x612.jpg',
         detailUrl: '/pages/gusanos.html'

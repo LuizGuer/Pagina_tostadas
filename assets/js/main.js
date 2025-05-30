@@ -29,62 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (carousel) {
         new bootstrap.Carousel(carousel, {
             interval: 5000,
-            wrap: true
+            wrap: true,
+            pause: false,
+            keyboard: false,
+            touch: false
         });
     }
-
-    /*=============== SHOW MENU ===============*/
-    const navMenu = document.getElementById('nav-menu');
-    const navToggle = document.getElementById('nav-toggle');
-    const navClose = document.getElementById('nav-close');
-    const navLinks = document.querySelectorAll('.nav__link');
-
-    // Función para cerrar el menú
-    const closeMenu = () => {
-        if (navMenu) {
-            navMenu.classList.remove('show-menu');
-        }
-    };
-
-    // Asegurarse de que el menú esté cerrado al inicio
-    closeMenu();
-
-    // Mostrar menú
-    if (navToggle) {
-        navToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navMenu.classList.add('show-menu');
-        });
-    }
-
-    // Ocultar menú
-    if (navClose) {
-        navClose.addEventListener('click', (e) => {
-            e.stopPropagation();
-            closeMenu();
-        });
-    }
-
-    // Ocultar menú cuando se hace clic en un enlace
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            closeMenu();
-        });
-    });
-
-    // Cerrar menú al hacer clic fuera
-    document.addEventListener('click', (e) => {
-        if (navMenu && navMenu.classList.contains('show-menu')) {
-            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-                closeMenu();
-            }
-        }
-    });
 
     /*=============== SEARCH ===============*/
     const searchBtn = document.getElementById('search-btn');
-
-    /* Handle Search button click */
     if (searchBtn) {
         searchBtn.addEventListener('click', function(event) {
             event.preventDefault(); 
@@ -97,14 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginBtn = document.getElementById('login-btn');
     const loginClose = document.getElementById('login-close');
 
-    /* Login show */
     if (loginBtn) {
         loginBtn.addEventListener('click', () => {
             login.classList.add('show-login');
         });
     }
 
-    /* Login hidden */
     if (loginClose) {
         loginClose.addEventListener('click', () => {
             login.classList.remove('show-login');

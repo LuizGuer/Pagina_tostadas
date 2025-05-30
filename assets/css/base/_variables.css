@@ -12,20 +12,22 @@
     --body-font: 'Syne', sans-serif;
     --heading-font: 'Syne', sans-serif;
     --base-font-size: 16px;
-    --h1-size: 2.5rem;
-    --h2-size: 2rem;
-    --h3-size: 1.75rem;
-    --h4-size: 1.5rem;
-    --h5-size: 1.25rem;
-    --h6-size: 1rem;
+    
+    /* Tamaños de fuente responsivos */
+    --h1-size: clamp(2rem, 5vw, 2.5rem);
+    --h2-size: clamp(1.75rem, 4vw, 2rem);
+    --h3-size: clamp(1.5rem, 3vw, 1.75rem);
+    --h4-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    --h5-size: clamp(1.125rem, 2vw, 1.25rem);
+    --h6-size: clamp(1rem, 1.5vw, 1.125rem);
 
     /* Espaciado */
-    --spacing-xs: 0.5rem;    /* 8px */
-    --spacing-sm: 1rem;      /* 16px */
-    --spacing-md: 1.5rem;    /* 24px */
-    --spacing-lg: 2rem;      /* 32px */
-    --spacing-xl: 3rem;      /* 48px */
-    --spacing-xxl: 4rem;     /* 64px */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
 
     /* Bordes */
     --border-radius-sm: 4px;
@@ -39,11 +41,9 @@
     --transition-slow: 0.5s ease;
 
     /* Layout */
-    --header-height: 4rem;   /* 64px */
-    --container-sm: 540px;
-    --container-md: 720px;
-    --container-lg: 960px;
-    --container-xl: 1140px;
+    --header-height: 4rem;
+    --container-padding: clamp(1rem, 3vw, 1.5rem);
+    --container-max-width: 1140px;
 
     /* Z-index */
     --z-negative: -1;
